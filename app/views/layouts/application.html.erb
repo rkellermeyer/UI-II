@@ -1,15 +1,316 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>UIIi</title>
+  <title>Idyuh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'bootstrap', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'colors/blue', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'icons', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'revolutionslider', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<%= yield %>
+<!-- Page Loader -->
+<div id="loader-wrapper">
+  <div id="loader"></div>
+</div>
+<!-- Wrapper -->
+<div id="wrapper">
 
+  <!-- Header
+  ================================================== -->
+  <div id="main-header">
+    <div class="container">
+
+      <div class="row">
+        <div class="header">
+
+          <div class="col-md-2 col-sm-12">
+            <div id="logo" class="margin-top-25">
+              <%= link_to 'Idyuh', root_path %>
+              <br>
+            </div>
+          </div>
+
+          <!-- Search Form -->
+          <div class="search-container">
+            <form action="#" method="get">
+              <input type="text" name="s" id="s" onblur="if(this.value=='')this.value='to search type and hit enter';" onfocus="if(this.value=='to search type and hit enter')this.value='';" value="to search type and hit enter" />
+            </form>
+            <div class="close-search"><a class="sl sl-icon-close" href="#"></a></div>
+          </div>
+
+          <div class="col-md-10 col-sm-12">
+
+            <!-- Mobile Navigation -->
+            <div class="menu-responsive">
+              <i class="fa fa-reorder menu-trigger"></i>
+              <i class="fa fa-search search-trigger"></i>
+              <form action="#" method="get" class="responsive-search">
+                <input type="text" onblur="if(this.value=='')this.value='to search type and hit enter';" onfocus="if(this.value=='to search type and hit enter')this.value='';" value="to search type and hit enter" />
+              </form>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav id="navigation">
+
+              <ul class="menu alt2" id="responsive">
+
+                <li class="dropdown">
+                  <a href="#" class="current">Home</a>
+
+                <li>
+                  <a href="#">Blog</a>
+                  <div class="mega two-cols">
+                    <div class="mega-content">
+
+                      <div class="mega-section">
+                        <ul>
+                          <li><span class="mega-headline">Full-Width</span></li>
+                          <li><a href="blog-full-width-3-columns.html">Three Columns</a></li>
+                          <li><a href="blog-full-width-4-columns.html">Four Columns</a></li>
+                          <li><a href="blog-full-width-5-columns.html">Five Columns</a></li>
+                          <li><a href="blog-full-width-with-sidebar.html">With Sidebar</a></li>
+                          <li><a href="blog-full-width-single-post.html">Single Blog Post</a></li>
+                        </ul>
+                      </div>
+
+                      <div class="mega-section">
+                        <ul>
+                          <li><span class="mega-headline">Contained</span></li>
+                          <li><a href="blog-contained-1-column.html">One Column</a></li>
+                          <li><a href="blog-contained-2-columns.html">Two Columns</a></li>
+                          <li><a href="blog-contained-3-columns.html">Three Columns</a></li>
+                          <li><a href="blog-contained-4-columns.html">Four Columns</a></li>
+                          <li><a href="blog-contained-with-sidebar.html">With Sidebar</a></li>
+                          <li><a href="blog-contained-single-post.html">Single Blog Post</a></li>
+                        </ul>
+                      </div>
+
+                    </div>
+                  </div>
+                </li>
+
+                <li><a href="contact-classic.html">Contact</a></li>
+
+
+                <!-- Search Icon-->
+                <li class="search"><a href="#"><i class="sl sl-icon-magnifier"></i></a></li>
+
+                <!-- Cart Icon -->
+                <li class="cart-icon"><a href="shopping-cart.html"><i class="sl sl-icon-basket"></i><span class="cart-counter">1</span></a></li>
+
+              </ul>
+            </nav>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <%= yield %>
+
+  <!-- Footer
+  ================================================== -->
+  <div class="margin-top-0"></div>
+
+  <div id="footer">
+    <!-- Main -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-6">
+          <img src="images/logo.png" alt="">
+          <br><br>
+          <p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi consequat libero ultricies laoreet ullamcorper phasellus semper.</p>
+          <a href="#" class="button social-btn"><i class="fa fa-facebook-official"></i> Like Us on Facebook</a>
+        </div>
+
+        <div class="col-md-4  col-sm-6">
+          <h4>Helpful Links</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Press Releases</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+          </ul>
+
+          <ul class="footer-links">
+            <li><a href="#">In the News</a></li>
+            <li><a href="#">Our Blog</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3  col-sm-12">
+          <h4>Contact Us</h4>
+          <div class="text-widget">
+            <span>12345 Little Lonsdale St, Melbourne</span> <br>
+            Phone: <span>(123) 123-456 </span><br>
+            Fax: <span>(123) 123-456</span> <br>
+            E-Mail:<span> office@example.com </span><br>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyrights">©  Copyright 2016 by <a href="#">OxtNet LLC.</a>. All Rights Reserved.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Back To Top Button -->
+  <div id="backtotop"><a href="#"></a></div>
+
+
+  <!-- Scripts
+  ================================================== -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.flexslider-min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'owl.carousel.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'counterup.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'waypoints.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.themepunch.tools.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.themepunch.revolution.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.isotope.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.magnific-popup.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.sticky-kit.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.twentytwenty', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.event.move', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.photogrid', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.tooltips.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.pricefilter', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.stacktable', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.contact-form', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.jpanelmenu', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'headroom.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'modernizr.custom', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'puregrid', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'flexibility', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'custom', 'data-turbolinks-track' => true %>
+
+  <!-- REVOLUTION SLIDER SCRIPT -->
+  <script type="text/javascript">
+    var tpj=jQuery;
+    var revapi4;
+    tpj(document).ready(function() {
+      if(tpj("#rev_slider_4_1").revolution == undefined){
+        revslider_showDoubleJqueryError("#rev_slider_4_1");
+      }else{
+        revapi4 = tpj("#rev_slider_4_1").show().revolution({
+          sliderType:"standard",
+          jsFileLocation:"scripts/",
+          sliderLayout:"auto",
+          dottedOverlay:"none",
+          delay:9000,
+          navigation: {
+            keyboardNavigation:"off",
+            keyboard_direction: "horizontal",
+            mouseScrollNavigation:"off",
+            onHoverStop:"off",
+            touch:{
+              touchenabled:"on",
+              swipe_threshold: 75,
+              swipe_min_touches: 1,
+              swipe_direction: "horizontal",
+              drag_block_vertical: false
+            },
+            arrows: {
+              style:"zeus alt",
+              enable:true,
+              hide_onmobile:true,
+              hide_under:600,
+              hide_onleave:true,
+              hide_delay:200,
+              hide_delay_mobile:1200,
+              tmp:'<div class="tp-title-wrap"></div>',
+              left: {
+                h_align:"left",
+                v_align:"center",
+                h_offset:00,
+                v_offset:0
+              },
+              right: {
+                h_align:"right",
+                v_align:"center",
+                h_offset:00,
+                v_offset:0
+              }
+            }
+          },
+          viewPort: {
+            enable:true,
+            outof:"pause",
+            visible_area:"80%"
+          },
+          responsiveLevels:[1900, 1700, 1600, 768, 480],
+          visibilityLevels:[1400,1200,992,768,480],
+          gridwidth:[1380, 1380, 1380, 1180, 778, 480],
+          gridheight:[850, 800, 700, 800, 800],
+          lazyType:"none",
+          parallax: {
+            type:"mouse",
+            origo:"slidercenter",
+            speed:2000,
+            levels:[2,3,4,5,6,7,12,16,10,25,47,48,49,50,51,55],
+            type:"mouse",
+          },
+          shadow:0,
+          spinner:"off",
+          stopLoop:"off",
+          stopAfterLoops:-1,
+          stopAtSlide:-1,
+          shuffle:"off",
+          autoHeight:"off",
+          hideThumbsOnMobile:"off",
+          hideSliderAtLimit:0,
+          hideCaptionAtLimit:0,
+          hideAllCaptionAtLilmit:0,
+          debugMode:false,
+          fallbacks: {
+            simplifyAll:"off",
+            nextSlideOnWindowFocus:"off",
+            disableFocusListener:false,
+          }
+        });
+      }
+    });	/*ready*/
+  </script>
+
+
+  <!-- SLIDER REVOLUTION 5.0 EXTENSIONS
+    (Load Extensions only on Local File Systems !
+    The following part can be removed on Server for On Demand Loading) -->
+  <%= javascript_include_tag 'extensions/revolution.extension.actions.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'extensions/revolution.extension.carousel.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'extensions/revolution.extension.kenburn.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'extensions/revolution.extension.layeranimation.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'extensions/revolution.extension.migration.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'extensions/revolution.extension.navigation.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'extensions/revolution.extension.parallax.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'extensions/revolution.extension.slideanims.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'extensions/revolution.extension.video.min', 'data-turbolinks-track' => true %>
+
+
+</div>
+<!-- Wrapper / End -->
 </body>
 </html>
