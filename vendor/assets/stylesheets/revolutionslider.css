@@ -87,7 +87,8 @@ website:   	http://www.themepunch.com
 	background-image:none;
 	background-position:0px 0px;
 	text-indent: 0em;
-	top:0px;left:0px;
+	top:0px;
+	left:0px;
 }
 
 
@@ -226,7 +227,7 @@ website:   	http://www.themepunch.com
 **********************************/
 
 .tp-static-layers				{	
-	position:absolute; z-index:505; top:0px;left:0px}
+	position:absolute; z-index:505; top:0px; left:0px;}
 
 
 .tp-caption .frontcorner		{
@@ -305,7 +306,7 @@ img.tp-slider-alternative-image	{
 .fullcoveredvideo video,
 .fullscreenvideo video				{	background: #000}
 
-.fullcoveredvideo .tp-poster		{	background-position: center center;background-size: cover;width:100%;height:100%;top:0px;left:0px}
+.fullcoveredvideo .tp-poster		{	background-position: center center;background-size: cover;width:100%;height:100%;top:0px;left:0px;}
 
 
 .videoisplaying .html5vid .tp-poster	{	display: none}
