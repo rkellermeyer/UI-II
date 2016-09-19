@@ -27,7 +27,7 @@ website:   	http://www.themepunch.com
     height: 100%;
     content: "";
     position: absolute;
-    left: 0;
+    /* left: 0; */
     top: 0;
     pointer-events: none;
  
@@ -88,7 +88,7 @@ website:   	http://www.themepunch.com
 	background-position:0px 0px;
 	text-indent: 0em;
 	top:0px;
-	left:0px;
+	/*left:0px;*/
 }
 
 
@@ -227,7 +227,9 @@ website:   	http://www.themepunch.com
 **********************************/
 
 .tp-static-layers				{	
-	position:absolute; z-index:505; top:0px; left:0px;}
+	position:absolute; z-index:505; top:0px;
+    /*left:0px;*/
+}
 
 
 .tp-caption .frontcorner		{
