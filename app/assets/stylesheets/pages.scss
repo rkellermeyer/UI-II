@@ -1,3 +1,12 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bold-link {
+  color: #ffffff;
+}
+
+.bold-link:hover {
+  color: #ffffff;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

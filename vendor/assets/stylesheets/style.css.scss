@@ -139,6 +139,13 @@ body #main-header {
 	margin: 25px 0;
 }
 
+.logo-link {
+  color: #0767c9;
+  font-size: 3rem;
+  font-weight: 900;
+  //text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 .header { margin: 30px 0 28px 0; }
 
 .basic #main-header .header,
@@ -515,6 +522,10 @@ li.dropdown ul li a:hover {
 }
 
 .dropdown ul:hover .hover-border {opacity: 1;}
+
+.header nav ul li a {
+  text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+}
 
 
 /* ---------------------------------- */
@@ -3370,6 +3381,7 @@ body .testimonial-author span {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+    max-height: 25rem;
 
 }
 

@@ -1,0 +1,35 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="hidden">
+    <%= f.hidden_field :project_type_id %>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>In 15 words or less, tell us about your project.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Now, select the best, or closest, category that fits your idea.</p>
+    </div>
+    <div class="col-md-12">
+      <%= f.number_field :category_id %>
+    </div>
+  </div>
+<% end %>
