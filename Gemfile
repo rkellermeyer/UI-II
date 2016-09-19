@@ -47,6 +47,8 @@ gem 'prawn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'rails_12factor'
+
 group :development do
   # Html2Haml
   gem 'html2haml'
