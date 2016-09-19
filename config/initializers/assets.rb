@@ -47,8 +47,8 @@ Rails.application.config.assets.precompile += %w(counterup.min.js
                                                 extensions/revolution.extension.video.min copy.js
                                                 extensions/revolution.extension.video.min.js
                                                 bootstrap.css
-                                                icons.css
+                                                icons.css.scss
                                                 revolutionslider.css
-                                                style.css
+                                                style.css.scss
                                                 colors/blue.css)
 
