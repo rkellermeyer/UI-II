@@ -35,6 +35,9 @@ gem 'paperclip'
 # Prawn for PDF-ing docs
 gem 'prawn'
 
+# Glyphicons
+gem 'bootstrap-glyphicons'
+
 # HAML for views
 # gem 'haml-rails'
 
