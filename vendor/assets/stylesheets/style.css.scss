@@ -94,8 +94,8 @@
 @import url("bootstrap.css");					/* Default Reset, Typography, Forms, Responsive Grid etc. */
 @import url("icons.css.scss");						/* Webfont Icons: FontAwesome, Linear Icons, Simple Line */
 @import url("revolutionslider.css");			/* Revolution Slider Style Sheets */
-@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700,300");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,300");
 
 
 /* ------------------------------------------------------------------- */
@@ -9380,10 +9380,10 @@ body .notification strong { border: none; }
 	cursor: pointer;
 }
 
-.notification.success .close {background: url(../images/alert_boxes_close_ico.png) 0 -8px no-repeat;}
-.notification.error .close {background: url(../images/alert_boxes_close_ico.png) 0 0 no-repeat;}
-.notification.warning .close {background: url(../images/alert_boxes_close_ico.png) 0 -16px no-repeat;}
-.notification.notice .close {background: url(../images/alert_boxes_close_ico.png) 0 -24px no-repeat;}
+.notification.success .close {background: url(../../../app/assets/images/alert_boxes_close_ico.png) 0 -8px no-repeat;}
+.notification.error .close {background: url(../../../app/assets/images/alert_boxes_close_ico.png) 0 0 no-repeat;}
+.notification.warning .close {background: url(../../../app/assets/images/alert_boxes_close_ico.png) 0 -16px no-repeat;}
+.notification.notice .close {background: url(../../../app/assets/images/alert_boxes_close_ico.png) 0 -24px no-repeat;}
 
 
 .notification.notice p span i { font-weight: 500; }
@@ -10826,22 +10826,22 @@ body.loaded #header-container.moz-fix { opacity: 1; }
 	.purple, .purple-bg { background: #917ae9; }
 	.olive, .olive-bg { background: #b3c211; }
 
-	.bg1 { background-image: url("../images/bg/squared_metal.png"); }
-	.bg2 { background-image: url("../images/bg/retina_wood.png"); }
-	.bg3 { background-image: url("../images/bg/brushed_alu.png"); }
-	.bg4 { background-image: url("../images/bg/crisp_paper_ruffles.png"); }
-	.bg5 { background-image: url("../images/bg/navy_blue.png"); }
-	.bg6 { background-image: url("../images/bg/bedge_grunge.png"); }
-	.bg7 { background-image: url("../images/bg/diamond_upholstery.png"); }
-	.bg8 { background-image: url("../images/bg/shattered.png"); }
-	.bg9 { background-image: url("../images/bg/light_toast.png"); }
-	.bg10 { background-image: url("../images/bg/noise_pattern_with_crosslines.png"); }
-	.bg11 { background-image: url("../images/bg/purty_wood.png"); }
-	.bg12 { background-image: url("../images/bg/subtle_stripes.png"); }
-	.bg13 { background-image: url("../images/bg/textured_stripes.png"); }
-	.bg14 { background-image: url("../images/bg/tileable_wood_texture.png"); }
-	.bg15 { background-image: url("../images/bg/stardust.png"); }
-	.bg16 { background-image: url("../images/bg/vichy.png"); }
+	.bg1 { background-image: url("../../../app/assets/images/bg/squared_metal.png"); }
+	.bg2 { background-image: url("../../../app/assets/images/bg/retina_wood.png"); }
+	.bg3 { background-image: url("../../../app/assets/images/bg/brushed_alu.png"); }
+	.bg4 { background-image: url("../../../app/assets/images/bg/crisp_paper_ruffles.png"); }
+	.bg5 { background-image: url("../../../app/assets/images/bg/navy_blue.png"); }
+	.bg6 { background-image: url("../../../app/assets/images/bg/bedge_grunge.png"); }
+	.bg7 { background-image: url("../../../app/assets/images/bg/diamond_upholstery.png"); }
+	.bg8 { background-image: url("../../../app/assets/images/bg/shattered.png"); }
+	.bg9 { background-image: url("../../../app/assets/images/bg/light_toast.png"); }
+	.bg10 { background-image: url("../../../app/assets/images/bg/noise_pattern_with_crosslines.png"); }
+	.bg11 { background-image: url("../../../app/assets/images/bg/purty_wood.png"); }
+	.bg12 { background-image: url("../../../app/assets/images/bg/subtle_stripes.png"); }
+	.bg13 { background-image: url("../../../app/assets/images/bg/textured_stripes.png"); }
+	.bg14 { background-image: url("../../../app/assets/images/bg/tileable_wood_texture.png"); }
+	.bg15 { background-image: url("../../../app/assets/images/bg/stardust.png"); }
+	.bg16 { background-image: url("../../../app/assets/images/bg/vichy.png"); }
 
 	.colors li a.active { box-shadow: 0 0 0 2px #fff inset }
 	.colors li a { border-radius: 3px; }
