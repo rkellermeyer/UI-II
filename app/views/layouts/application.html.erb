@@ -16,107 +16,92 @@
   <![endif]-->
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<!-- Page Loader -->
-<div id="loader-wrapper">
-  <div id="loader"></div>
-</div>
-<!-- Wrapper -->
-<div id="wrapper">
-
-  <!-- Header
-  ================================================== -->
-  <div id="main-header">
-    <div class="container">
-
-      <div class="row">
-        <div class="header">
-
-          <div class="col-md-2 col-sm-12">
-            <div id="logo" class="margin-top-25">
-              <%= link_to 'Idyuh', root_path, class: 'logo-link' %>
-              <br>
-            </div>
-          </div>
-
-          <!-- Search Form -->
-          <div class="search-container">
-            <form action="#" method="get">
-              <input type="text" name="s" id="s" onblur="if(this.value=='')this.value='to search type and hit enter';" onfocus="if(this.value=='to search type and hit enter')this.value='';" value="to search type and hit enter" />
-            </form>
-            <div class="close-search"><a class="sl sl-icon-close" href="#"></a></div>
-          </div>
-
-          <div class="col-md-10 col-sm-12">
-
-            <!-- Mobile Navigation -->
-            <div class="menu-responsive">
-              <i class="fa fa-reorder menu-trigger"></i>
-              <i class="fa fa-search search-trigger"></i>
-              <form action="#" method="get" class="responsive-search">
-                <input type="text" onblur="if(this.value=='')this.value='to search type and hit enter';" onfocus="if(this.value=='to search type and hit enter')this.value='';" value="to search type and hit enter" />
-              </form>
-            </div>
-
-            <!-- Main Navigation -->
-            <nav id="navigation">
-
-              <ul class="menu alt2" id="responsive">
-
-                <li class="dropdown">
-                  <a href="#" class="current">Home</a>
-
-                <li>
-                  <a href="#">Blog</a>
-                  <!--<div class="mega two-cols">-->
-                    <!--<div class="mega-content">-->
-
-                      <!--<div class="mega-section">-->
-                        <!--<ul>-->
-                          <!--<li><span class="mega-headline">Full-Width</span></li>-->
-                          <!--<li><a href="blog-full-width-3-columns.html">Three Columns</a></li>-->
-                          <!--<li><a href="blog-full-width-4-columns.html">Four Columns</a></li>-->
-                          <!--<li><a href="blog-full-width-5-columns.html">Five Columns</a></li>-->
-                          <!--<li><a href="blog-full-width-with-sidebar.html">With Sidebar</a></li>-->
-                          <!--<li><a href="blog-full-width-single-post.html">Single Blog Post</a></li>-->
-                        <!--</ul>-->
-                      <!--</div>-->
-
-                      <!--<div class="mega-section">-->
-                        <!--<ul>-->
-                          <!--<li><span class="mega-headline">Contained</span></li>-->
-                          <!--<li><a href="blog-contained-1-column.html">One Column</a></li>-->
-                          <!--<li><a href="blog-contained-2-columns.html">Two Columns</a></li>-->
-                          <!--<li><a href="blog-contained-3-columns.html">Three Columns</a></li>-->
-                          <!--<li><a href="blog-contained-4-columns.html">Four Columns</a></li>-->
-                          <!--<li><a href="blog-contained-with-sidebar.html">With Sidebar</a></li>-->
-                          <!--<li><a href="blog-contained-single-post.html">Single Blog Post</a></li>-->
-                        <!--</ul>-->
-                      <!--</div>-->
-
-                    <!--</div>-->
-                  <!--</div>-->
-                </li>
-
-                <li><a href="#">Contact</a></li>
-
-
-                <!-- Search Icon-->
-                <li class="search"><a href="#"><i class="sl sl-icon-magnifier"></i></a></li>
-
-                <!-- Cart Icon -->
-                <li class="cart-icon"><a href="shopping-cart.html"><i class="sl sl-icon-basket"></i><span class="cart-counter">1</span></a></li>
-
-              </ul>
-            </nav>
-
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-
+  <%- unless flash[:notice].nil? %>
+    <div class="notification notice closeable">
+      <p><span>Notice!</span> <%= notice %></p>
+      <a class="close" href="#"></a>
     </div>
+  <%- end %>
+
+  <%- unless flash[:alert].nil? %>
+    <div class="notification error closeable">
+      <p><span>Error!</span> <%= alert %></p>
+      <a class="close" href="#"></a>
+    </div>
+  <%- end %>
+  <!-- Page Loader -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+  </div>
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Header
+    ================================================== -->
+    <div id="main-header">
+      <div class="container">
+
+        <div class="row">
+          <div class="header">
+
+            <div class="col-md-2 col-sm-12">
+              <div id="logo" class="margin-top-25">
+                <%= link_to 'Idyuh', root_path, class: 'logo-link' %>
+                <br>
+              </div>
+            </div>
+
+            <!-- Search Form -->
+            <div class="search-container">
+              <form action="#" method="get">
+                <input type="text" name="s" id="s" onblur="if(this.value=='')this.value='to search type and hit enter';" onfocus="if(this.value=='to search type and hit enter')this.value='';" value="to search type and hit enter" />
+              </form>
+              <div class="close-search"><a class="sl sl-icon-close" href="#"></a></div>
+            </div>
+
+            <div class="col-md-10 col-sm-12">
+
+              <!-- Mobile Navigation -->
+              <div class="menu-responsive">
+                <i class="fa fa-reorder menu-trigger"></i>
+                <i class="fa fa-search search-trigger"></i>
+                <form action="#" method="get" class="responsive-search">
+                  <input type="text" onblur="if(this.value=='')this.value='to search type and hit enter';" onfocus="if(this.value=='to search type and hit enter')this.value='';" value="to search type and hit enter" />
+                </form>
+              </div>
+
+              <!-- Main Navigation -->
+              <nav id="navigation">
+
+                <ul class="menu alt2" id="responsive">
+
+                  <li class="dropdown">
+                    <a href="#" class="current">Home</a>
+
+                  <li>
+                    <a href="#">Blog</a>
+                  </li>
+
+                  <li><%= link_to 'Contact Us', new_contact_request_path %></li>
+
+
+                  <!-- Search Icon-->
+                  <li class="search"><a href="#"><i class="sl sl-icon-magnifier"></i></a></li>
+
+                  <!-- Cart Icon -->
+                  <li class="cart-icon"><a href="shopping-cart.html"><i class="sl sl-icon-basket"></i><span class="cart-counter">1</span></a></li>
+
+                </ul>
+              </nav>
+
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <%= yield %>
@@ -271,7 +256,7 @@
             origo:"slidercenter",
             speed:2000,
             levels:[2,3,4,5,6,7,12,16,10,25,47,48,49,50,51,55],
-            type:"mouse",
+            type:"mouse"
           },
           shadow:0,
           spinner:"off",

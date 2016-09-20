@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919195416) do
+ActiveRecord::Schema.define(version: 20160920020036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contact_requests", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email",      null: false
+    t.string   "subject"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "contact_requests", ["email"], name: "index_contact_requests_on_email", unique: true, using: :btree
 
   create_table "members", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
