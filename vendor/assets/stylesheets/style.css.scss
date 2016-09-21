@@ -9327,12 +9327,12 @@ body .skill-bar-value {
 ------------------------------------- */
 #result .success,
 .notification {
-	line-height: 24px;
-	margin-bottom: 15px;
-	position: relative;
-	padding: 20px 26px;
-	padding-right: 50px;
-	border-radius: 3px;
+  line-height: 24px;
+  margin-bottom: 15px;
+  position: relative;
+  padding: 20px 26px;
+  padding-right: 50px;
+  border-radius: 3px;
 }
 
 .notification p { margin: 0; }
@@ -9381,6 +9381,7 @@ body .notification strong { border: none; }
 	height: 8px;
 	width: 8px;
 	cursor: pointer;
+  z-index: 9999;
 }
 
 .notification.success .close {background: url(../../../app/assets/images/alert_boxes_close_ico.png) 0 -8px no-repeat;}

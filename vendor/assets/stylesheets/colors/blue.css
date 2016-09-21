@@ -147,7 +147,7 @@ table.basic-table th,
 .rsDefaultInv .rsThumb.rsNavSelected .rsTmb:before,
 .main-color-bg,
 mark.color {
-	background-color: #0767c9;
+  background-color: #0767c9;
 }
 
 .counter-boxes-inside-parallax .counter-box-icon i { color: #0767c9 !important; }

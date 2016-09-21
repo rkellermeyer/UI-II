@@ -16,26 +16,12 @@
   <![endif]-->
 </head>
 <body>
-  <%- unless flash[:notice].nil? %>
-    <div class="notification notice closeable">
-      <p><span>Notice!</span> <%= notice %></p>
-      <a class="close" href="#"></a>
-    </div>
-  <%- end %>
-
-  <%- unless flash[:alert].nil? %>
-    <div class="notification error closeable">
-      <p><span>Error!</span> <%= alert %></p>
-      <a class="close" href="#"></a>
-    </div>
-  <%- end %>
-  <!-- Page Loader -->
-  <div id="loader-wrapper">
-    <div id="loader"></div>
-  </div>
-  <!-- Wrapper -->
-  <div id="wrapper">
-
+<!-- Page Loader -->
+<div id="loader-wrapper">
+  <div id="loader"></div>
+</div>
+<!-- Wrapper -->
+<div id="wrapper">
     <!-- Header
     ================================================== -->
     <div id="main-header">
@@ -72,21 +58,16 @@
 
               <!-- Main Navigation -->
               <nav id="navigation">
-
                 <ul class="menu alt2" id="responsive">
-                  <li>
-                    <a href="#">Blog</a>
-                  </li>
-
-                  <li><%= link_to 'Contact Us', new_contact_request_path %></li>
-
-
                   <!-- Search Icon-->
                   <li class="search"><a href="#"><i class="sl sl-icon-magnifier"></i></a></li>
-
-                  <!-- Cart Icon -->
-                  <li class="cart-icon"><a href="#"><i class="sl sl-icon-basket"></i><span class="cart-counter">1</span></a></li>
-
+                  <!--Help Icon-->
+                  <li class="help"><a href="#">Help</a></li>
+                  <%- if member_signed_in? %>
+                    <li><%= link_to 'Sign out', destroy_member_session_path, :method => :delete %></li>
+                  <% else %>
+                     <li><%= link_to 'Login', new_member_session_path %></li>
+                  <% end %>
                 </ul>
               </nav>
 
@@ -97,8 +78,31 @@
 
       </div>
     </div>
+    <%- unless flash[:notice].nil? %>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="notification notice closeable">
+            <p class="text-center"><span>Notice!</span> <%= notice %></p>
+            <a class="close" href="#"></a>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    <%- end %>
 
-  </div>
+    <%- unless flash[:alert].nil? %>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="notification error closeable">
+            <p class="text-center"><span>Error!</span> <%= alert %></p>
+            <a class="close" href="#"></a>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    <%- end %>
 
   <%= yield %>
 
@@ -131,7 +135,7 @@
             <li><a href="#">In the News</a></li>
             <li><a href="#">Our Blog</a></li>
             <li><a href="#">Testimonials</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><%= link_to 'Contact Us', new_contact_request_path %></li>
           </ul>
         </div>
 
@@ -160,7 +164,8 @@
 
   <!-- Back To Top Button -->
   <div id="backtotop"><a href="#"></a></div>
-
+</div>
+<!-- Wrapper / End -->
 
   <!-- Scripts
   ================================================== -->
@@ -251,8 +256,7 @@
             type:"mouse",
             origo:"slidercenter",
             speed:2000,
-            levels:[2,3,4,5,6,7,12,16,10,25,47,48,49,50,51,55],
-            type:"mouse"
+            levels:[2,3,4,5,6,7,12,16,10,25,47,48,49,50,51,55]
           },
           shadow:0,
           spinner:"off",
@@ -269,7 +273,7 @@
           fallbacks: {
             simplifyAll:"off",
             nextSlideOnWindowFocus:"off",
-            disableFocusListener:false,
+            disableFocusListener:false
           }
         });
       }
@@ -290,8 +294,5 @@
   <%= javascript_include_tag 'extensions/revolution.extension.slideanims.min', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'extensions/revolution.extension.video.min', 'data-turbolinks-track' => true %>
 
-
-</div>
-<!-- Wrapper / End -->
 </body>
 </html>
