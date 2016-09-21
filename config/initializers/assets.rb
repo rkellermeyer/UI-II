@@ -50,5 +50,6 @@ Rails.application.config.assets.precompile += %w(counterup.min.js
                                                 icons.css.scss
                                                 revolutionslider.css
                                                 style.css.scss
-                                                colors/blue.css)
+                                                colors/blue.css
+                                                idyuh-take-1.mp4)
 
