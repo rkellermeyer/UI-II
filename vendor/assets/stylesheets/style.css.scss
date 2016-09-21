@@ -7830,7 +7830,7 @@ input[type="submit"].center {
 /* ---------------------------------- */
 /* List Styles
 ------------------------------------- */
-
+.list-5,
 .list-4,
 .list-3,
 .list-2,
@@ -7839,6 +7839,7 @@ input[type="submit"].center {
 	margin-left: 10px;
 }
 
+.list-5 li,
 .list-4 li,
 .list-3 li,
 .list-2 li,
@@ -7850,6 +7851,7 @@ input[type="submit"].center {
 	position: relative;
 }
 
+.list-5 li:first-child,
 .list-4 li:first-child,
 .list-3 li:first-child,
 .list-2 li:first-child,
@@ -7857,7 +7859,7 @@ input[type="submit"].center {
 	margin-top: 0;
 }
 
-
+.list-5 li:before,
 .list-4 li:before,
 .list-3 li:before,
 .list-2 li:before,
@@ -7875,6 +7877,7 @@ input[type="submit"].center {
 	color: #777;
 }
 
+.list-5 li:before { content: "\e082"; font-size: 18px; top: 1px; }
 .list-4 li:before { content: "\e080"; font-size: 18px; top: 1px; }
 .list-3 li:before { content: "\e079"; font-size: 18px; top: 1px; }
 .list-2 li:before { content: "\e606"; font-size: 16px; right: -2px; }

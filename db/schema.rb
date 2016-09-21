@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920020036) do
+ActiveRecord::Schema.define(version: 20160920170355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "category_type_id"
+    t.string   "uspto_code"
+    t.string   "ipc_code"
+    t.string   "cpc_code"
+    t.boolean  "active"
+    t.integer  "parent_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "contact_requests", force: :cascade do |t|
     t.string   "first_name"
@@ -52,6 +65,42 @@ ActiveRecord::Schema.define(version: 20160920020036) do
 
   add_index "members", ["email"], name: "index_members_on_email", unique: true, using: :btree
   add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
+
+  create_table "project_profiles", force: :cascade do |t|
+    t.integer  "reasons"
+    t.boolean  "disclosure_flag"
+    t.integer  "number_of_inventors"
+    t.boolean  "multi_creator"
+    t.text     "purpose"
+    t.text     "improvement_1"
+    t.text     "improvement_2"
+    t.text     "gaps"
+    t.text     "improve_gaps"
+    t.string   "profile_steps_doc_id"
+    t.string   "component_relationships_doc_id"
+    t.string   "project_requirements_doc_id"
+    t.string   "working_detail_doc_id"
+    t.text     "how_to"
+    t.text     "necessities_options"
+    t.text     "statement_of_use"
+    t.string   "bubba_story_doc_id"
+    t.boolean  "active"
+    t.string   "upid"
+    t.string   "idyuh_id"
+    t.integer  "project_id"
+    t.integer  "member_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "project_profiles", ["bubba_story_doc_id"], name: "index_project_profiles_on_bubba_story_doc_id", using: :btree
+  add_index "project_profiles", ["component_relationships_doc_id"], name: "index_project_profiles_on_component_relationships_doc_id", using: :btree
+  add_index "project_profiles", ["member_id"], name: "index_project_profiles_on_member_id", using: :btree
+  add_index "project_profiles", ["multi_creator"], name: "index_project_profiles_on_multi_creator", using: :btree
+  add_index "project_profiles", ["profile_steps_doc_id"], name: "index_project_profiles_on_profile_steps_doc_id", using: :btree
+  add_index "project_profiles", ["project_id"], name: "index_project_profiles_on_project_id", using: :btree
+  add_index "project_profiles", ["project_requirements_doc_id"], name: "index_project_profiles_on_project_requirements_doc_id", using: :btree
+  add_index "project_profiles", ["working_detail_doc_id"], name: "index_project_profiles_on_working_detail_doc_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.integer  "project_type_id"

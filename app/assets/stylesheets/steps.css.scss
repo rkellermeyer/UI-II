@@ -1,0 +1,16 @@
+.jumbo-select {
+  border: 1px solid #2E2F30;
+  border-radius: 4px;
+  padding: 1rem;
+  transition: all 0.25s linear;
+}
+
+.jumbo-select.good:hover, .jumbo-select.good.chosen {
+  border-color: #8FAB58;
+  background-color: #EDF5DD;
+}
+
+.jumbo-select.bad:hover, .jumbo-select.bad.chosen {
+  border-color: #B75E5E;
+  background-color: #FFE6E6;
+}

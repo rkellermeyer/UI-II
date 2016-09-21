@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
+# Use redis for document and profile storage
+gem 'redis-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,17 +40,11 @@ gem 'prawn'
 # Glyphicons
 gem 'bootstrap-glyphicons'
 
+# Bitmask Attributes for compressing settings and statuses
+gem 'bitmask_attributes'
+
 # HAML for views
 # gem 'haml-rails'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 gem 'rails_12factor'
 
@@ -77,5 +73,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'pry-rails'
 end
 

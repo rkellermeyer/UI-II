@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    @project.build_project_profile
   end
 
   # GET /projects/1/edit
@@ -25,6 +26,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @project.create_project_profile(project_params[:project_profile_attributes])
 
     respond_to do |format|
       if @project.save
@@ -69,6 +71,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:project_type_id, :title, :category_id)
+      params.require(:project).permit(:project_type_id, :title, :category_id, project_profile_attributes: [:disclosure_flag, :reasons, :multi_creator])
     end
 end

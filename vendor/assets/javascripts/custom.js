@@ -1133,6 +1133,22 @@ $(document).ready(function(){
 	  }
 	});
 
+	// The following function needs to be fixed. When one jumbo is selected, the next should deselect.
+	$(function() {
+		$('.jumbo-select').on('click', function() {
+			if($(this).hasClass('chosen')) {
+				$(this).removeClass('chosen');
+			} else {
+				$(this).addClass('chosen');
+				if($(this).hasClass('good')) {
+					$('#project_project_profile_attributes_disclosure_flag').val('false');
+				} else {
+					$('#project_project_profile_attributes_disclosure_flag').val('true');
+				}
+			}
+		});
+	});
+
 
 // ------------------ End Document ------------------ //
 });

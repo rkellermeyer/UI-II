@@ -1,0 +1,2 @@
+json.extract! project_profile, :id, :patentabilities, :disclosures, :number_of_inventors, :multi_creator, :purpose, :improvement_1, :improvement_2, :gaps, :improve_gaps, :profile_steps_doc_id, :component_relationships_doc_id, :project_requirements_doc_id, :working_detail_doc_id, :how_to, :necessities_options, :statement_of_use, :bubba_story_doc_id, :active, :upid, :idyuh_id, :project_id, :member_id, :created_at, :updated_at
+json.url project_profile_url(project_profile, format: :json)

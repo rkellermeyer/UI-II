@@ -1,35 +1,188 @@
-<%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
-      <% @project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+<div class="container">
+  <%= form_for(@project) do |f| %>
+    <% if @project.errors.any? %>
+      <div class="row">
+        <div class="col-md-12">
+          <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <% @project.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+    <div class="style-3">
+      <!-- Tabs Navigation -->
+      <ul class="tabs-nav buttons">
+        <li class="active"><a href="#tab1b">Identity</a></li>
+        <li><a href="#tab2b">Patentability</a></li>
+        <li><a href="#tab3b">Protection</a></li>
+        <li><a href="#tab4b">Inventorship</a></li>
       </ul>
+
+      <!-- Tabs Content -->
+      <div class="tabs-container alt">
+        <div class="tab-content" id="tab1b">
+          <div class="row">
+            <!-- Patent Form Step 1 -->
+            <div class="col-md-12">
+
+              <section id="provisional-step-1">
+                <h3 class="headline centered margin-bottom-10 margin-top-10">Tell Us A Little About Your Idea</h3>
+                <div class="hidden">
+                  <%= f.hidden_field :project_type_id %>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p>In 15 words or less, tell us about your project.</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <%= f.text_field :title %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p>Now, select the best, or closest, category that fits your idea.</p>
+                  </div>
+                  <div class="col-md-12">
+                    <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <!-- Patent Form Step 1 End -->
+
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab2b">
+          <div class="row">
+            <!-- Patent Form Step 2 -->
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+
+              <section id="provisional-step-2">
+                <h3 class="headline centered margin-bottom-10 margin-top-10">Who Knows About Your Idea?</h3>
+                <p class="text-center">Click on the box that best describes how you have kept your secret</p>
+                <%= f.fields_for :project_profile do |ff| %>
+                  <%= ff.hidden_field :disclosure_flag %>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="jumbo-select good">
+                        <h2 class="text-center">I am a STFU! Jedi.</h2>
+                        <ul class="list-4">
+                          <li>I have not spoken to anyone publicly about my idea.</li>
+                          <li>I have not written anything publicly about my idea.</li>
+                          <li>I have not advertised my idea in any publications or broadcasts.</li>
+                          <li>I have learned that you really can't trust anyone when it comes to protecting anything.</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="jumbo-select bad">
+                        <h2 class="text-center">Everyone!</h2>
+                        <ul class="list-5">
+                          <li>People that shop for anything have probably seen or purchased something exactly the same or similar.</li>
+                          <li>It's not really my idea, I'm just trying to file it before anyone else does.</li>
+                          <li>Ok, it's not even a new idea.</li>
+                          <li>I'm a dishonest scam artist that steals other's ideas.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </section>
+            </div>
+            <div class="col-md-2"></div>
+            <!-- Patent Form Step 2 End -->
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab3b">
+          <div class="row">
+            <!-- Patent Form Step 3 -->
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+
+              <section id="provisional-step-1">
+                <h3 class="headline centered margin-bottom-10 margin-top-10">Why Do You Want To Patent Your Idea?</h3>
+                <label for="rememberme" class="rememberme">
+                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I just want to sell my idea, retire, and sit on a beach sipping my drink.
+                </label>
+
+                <label for="rememberme" class="rememberme">
+                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> Royalties. I want to get paid every time someone buys or uses my idea.
+                </label>
+
+                <label for="rememberme" class="rememberme">
+                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> My boss is lazy and told me to file this for the company.
+                </label>
+
+                <label for="rememberme" class="rememberme">
+                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I want to make sure no one else steals my idea.
+                </label>
+
+                <label for="rememberme" class="rememberme">
+                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I'm a glory hound that wants to brag about how smart I am. Just kidding ... It looks good on a resume.
+                </label>
+
+                <label for="rememberme" class="rememberme">
+                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I have my own reasons for wanting to complete a provisional patent.
+                </label>
+              </section>
+            </div>
+            <div class="col-md-2"></div>
+            <!-- Patent Form Step 3 End -->
+          </div>
+        </div>
+        <div class="tab-content" id="tab4b">
+          <div class="row">
+            <!-- Patent Form Step 4 -->
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+
+              <section id="provisional-step-1">
+                <h3 class="headline centered margin-bottom-10 margin-top-10">Are There Any Other Parties Involved?</h3>
+                <label for="rememberme" class="rememberme">
+                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> No, I invented this all by myself.
+                </label>
+
+                <label for="rememberme" class="rememberme">
+                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> Yes, I had help.
+                </label>
+
+                <label for="rememberme" class="rememberme">
+                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I didn't come up with this idea.
+                </label>
+
+                <label for="rememberme" class="rememberme">
+                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I came up with this while working for the U.S. Government.
+                </label>
+              </section>
+            </div>
+            <div class="col-md-2"></div>
+            <!-- Patent Form Step 4 End -->
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12 margin-bottom-20">
+          <!-- Content -->
+          <div class="info-banner-fw boxed light">
+            That was easy right? Now, Let's Really Get Down to Business!
+            <%= f.submit 'Save & Continue', class: 'button border medium' %>
+          </div>
+
+        </div>
+      </div>
     </div>
   <% end %>
-
-  <div class="hidden">
-    <%= f.hidden_field :project_type_id %>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <p>In 15 words or less, tell us about your project.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <%= f.text_field :title %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <p>Now, select the best, or closest, category that fits your idea.</p>
-    </div>
-    <div class="col-md-12">
-      <%= f.number_field :category_id %>
-    </div>
-  </div>
-<% end %>
+</div>

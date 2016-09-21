@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Project Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patentabilities</th>
+      <th>Disclosures</th>
+      <th>Number of inventors</th>
+      <th>Multi creator</th>
+      <th>Purpose</th>
+      <th>Improvement 1</th>
+      <th>Improvement 2</th>
+      <th>Gaps</th>
+      <th>Improve gaps</th>
+      <th>Profile steps doc</th>
+      <th>Component relationships doc</th>
+      <th>Project requirements doc</th>
+      <th>Working detail doc</th>
+      <th>How to</th>
+      <th>Necessities options</th>
+      <th>Statement of use</th>
+      <th>Bubba story doc</th>
+      <th>Active</th>
+      <th>Upid</th>
+      <th>Idyuh</th>
+      <th>Project</th>
+      <th>Member</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @project_profiles.each do |project_profile| %>
+      <tr>
+        <td><%= project_profile.patentabilities %></td>
+        <td><%= project_profile.disclosures %></td>
+        <td><%= project_profile.number_of_inventors %></td>
+        <td><%= project_profile.multi_creator %></td>
+        <td><%= project_profile.purpose %></td>
+        <td><%= project_profile.improvement_1 %></td>
+        <td><%= project_profile.improvement_2 %></td>
+        <td><%= project_profile.gaps %></td>
+        <td><%= project_profile.improve_gaps %></td>
+        <td><%= project_profile.profile_steps_doc_id %></td>
+        <td><%= project_profile.component_relationships_doc_id %></td>
+        <td><%= project_profile.project_requirements_doc_id %></td>
+        <td><%= project_profile.working_detail_doc_id %></td>
+        <td><%= project_profile.how_to %></td>
+        <td><%= project_profile.necessities_options %></td>
+        <td><%= project_profile.statement_of_use %></td>
+        <td><%= project_profile.bubba_story_doc_id %></td>
+        <td><%= project_profile.active %></td>
+        <td><%= project_profile.upid %></td>
+        <td><%= project_profile.idyuh_id %></td>
+        <td><%= project_profile.project_id %></td>
+        <td><%= project_profile.member_id %></td>
+        <td><%= link_to 'Show', project_profile %></td>
+        <td><%= link_to 'Edit', edit_project_profile_path(project_profile) %></td>
+        <td><%= link_to 'Destroy', project_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project profile', new_project_profile_path %>

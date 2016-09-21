@@ -1,0 +1,105 @@
+<%= form_for(@project_profile) do |f| %>
+  <% if @project_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project_profile.errors.count, "error") %> prohibited this project_profile from being saved:</h2>
+
+      <ul>
+      <% @project_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :patentabilities %><br>
+    <%= f.number_field :patentabilities %>
+  </div>
+  <div class="field">
+    <%= f.label :disclosures %><br>
+    <%= f.number_field :disclosures %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_inventors %><br>
+    <%= f.number_field :number_of_inventors %>
+  </div>
+  <div class="field">
+    <%= f.label :multi_creator %><br>
+    <%= f.check_box :multi_creator %>
+  </div>
+  <div class="field">
+    <%= f.label :purpose %><br>
+    <%= f.text_area :purpose %>
+  </div>
+  <div class="field">
+    <%= f.label :improvement_1 %><br>
+    <%= f.text_area :improvement_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :improvement_2 %><br>
+    <%= f.text_area :improvement_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :gaps %><br>
+    <%= f.text_area :gaps %>
+  </div>
+  <div class="field">
+    <%= f.label :improve_gaps %><br>
+    <%= f.text_area :improve_gaps %>
+  </div>
+  <div class="field">
+    <%= f.label :profile_steps_doc_id %><br>
+    <%= f.text_field :profile_steps_doc_id %>
+  </div>
+  <div class="field">
+    <%= f.label :component_relationships_doc_id %><br>
+    <%= f.text_field :component_relationships_doc_id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_requirements_doc_id %><br>
+    <%= f.text_field :project_requirements_doc_id %>
+  </div>
+  <div class="field">
+    <%= f.label :working_detail_doc_id %><br>
+    <%= f.text_field :working_detail_doc_id %>
+  </div>
+  <div class="field">
+    <%= f.label :how_to %><br>
+    <%= f.text_area :how_to %>
+  </div>
+  <div class="field">
+    <%= f.label :necessities_options %><br>
+    <%= f.text_area :necessities_options %>
+  </div>
+  <div class="field">
+    <%= f.label :statement_of_use %><br>
+    <%= f.text_area :statement_of_use %>
+  </div>
+  <div class="field">
+    <%= f.label :bubba_story_doc_id %><br>
+    <%= f.text_field :bubba_story_doc_id %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br>
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :upid %><br>
+    <%= f.text_field :upid %>
+  </div>
+  <div class="field">
+    <%= f.label :idyuh_id %><br>
+    <%= f.text_field :idyuh_id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_id %><br>
+    <%= f.number_field :project_id %>
+  </div>
+  <div class="field">
+    <%= f.label :member_id %><br>
+    <%= f.number_field :member_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
