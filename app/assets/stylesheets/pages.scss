@@ -8,10 +8,16 @@
 
 .bold-link:hover {
   color: #ffffff;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .dark-text .bold-link:hover {
-  //color: #ffffff;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: #000000;
+}
+
+.dark-text .bold-link:hover i {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.white-text .bold-link:hover i {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
