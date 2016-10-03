@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mentors
   resources :project_profiles
   resources :categories
   resources :contact_requests

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @mentor.user_id %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @mentor.approved %>
+</p>
+
+<p>
+  <strong>In review:</strong>
+  <%= @mentor.in_review %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @mentor.category_id %>
+</p>
+
+<p>
+  <strong>Specialty:</strong>
+  <%= @mentor.specialty_id %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @mentor.uuid %>
+</p>
+
+<%= link_to 'Edit', edit_mentor_path(@mentor) %> |
+<%= link_to 'Back', mentors_path %>
