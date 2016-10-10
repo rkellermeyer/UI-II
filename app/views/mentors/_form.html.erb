@@ -15,14 +15,14 @@
     <div class="row">
       <div class="columns col-md-3"></div>
       <div class="columns col-md-6">
-        <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name), prompt: 'Choose A Field' %>
+        <%= f.select :category_id, options_from_collection_for_select(Category.where(category_type_id: 2), :id, :name), prompt: 'Choose A Field' %>
       </div>
       <div class="columns col-md-3"></div>
     </div>
     <div class="row">
       <div class="columns col-md-3"></div>
       <div class="columns col-md-6">
-        <%= f.select :specialty_id, options_from_collection_for_select(Category.all, :id, :name), prompt: 'Choose A Specialty' %>
+        <%= f.select :specialty_id, options_from_collection_for_select(Category.where(category_type_id: 1), :id, :name), prompt: 'Choose A Specialty' %>
       </div>
       <div class="columns col-md-3"></div>
     </div>

@@ -23,6 +23,11 @@
         <li><a href="#tab2b">Patentability</a></li>
         <li><a href="#tab3b">Protection</a></li>
         <li><a href="#tab4b">Inventorship</a></li>
+
+        <li><a href="#tab5b">Purpose</a></li>
+        <li><a href="#tab6b">Explanation</a></li>
+        <li><a href="#tab7b">Detail</a></li>
+        <li><a href="#tab8b">Availability</a></li>
       </ul>
 
       <!-- Tabs Content -->
@@ -123,27 +128,27 @@
 
               <section id="provisional-step-1">
                 <label for="rememberme" class="rememberme">
-                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I just want to sell my idea, retire, and sit on a beach sipping my drink.
+                  <input name="rememberme" type="radio" id="rememberme" value="forever" class="margin-right-10" /> I just want to sell my idea, retire, and sit on a beach sipping my drink.
                 </label>
 
                 <label for="rememberme" class="rememberme">
-                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> Royalties. I want to get paid every time someone buys or uses my idea.
+                  <input name="rememberme" type="radio" id="rememberme" value="forever" class="margin-right-10" /> Royalties. I want to get paid every time someone buys or uses my idea.
                 </label>
 
                 <label for="rememberme" class="rememberme">
-                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> My boss is lazy and told me to file this for the company.
+                  <input name="rememberme" type="radio" id="rememberme" value="forever" class="margin-right-10" /> My boss is lazy and told me to file this for the company.
                 </label>
 
                 <label for="rememberme" class="rememberme">
-                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I want to make sure no one else steals my idea.
+                  <input name="rememberme" type="radio" id="rememberme" value="forever" class="margin-right-10" /> I want to make sure no one else steals my idea.
                 </label>
 
                 <label for="rememberme" class="rememberme">
-                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I'm a glory hound that wants to brag about how smart I am.
+                  <input name="rememberme" type="radio" id="rememberme" value="forever" class="margin-right-10" /> I'm a glory hound that wants to brag about how smart I am.
                 </label>
 
                 <label for="rememberme" class="rememberme">
-                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I have my own reasons for wanting to complete a provisional patent.
+                  <input name="rememberme" type="radio" id="rememberme" value="forever" class="margin-right-10" /> I have my own reasons for wanting to complete a provisional patent.
                 </label>
               </section>
             </div>
@@ -160,19 +165,19 @@
 
               <section id="provisional-step-1">
                 <label for="rememberme" class="rememberme">
-                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> No, I invented this all by myself.
+                  <input name="rememberme" type="radio" id="rememberme" value="forever" class="margin-right-10" /> No, I invented this all by myself.
                 </label>
 
                 <label for="rememberme" class="rememberme">
-                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> Yes, I had help.
+                  <input name="rememberme" type="radio" id="rememberme" value="forever" class="margin-right-10" /> Yes, I had help.
                 </label>
 
                 <label for="rememberme" class="rememberme">
-                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I didn't come up with this idea.
+                  <input name="rememberme" type="radio" id="rememberme" value="forever" class="margin-right-10" /> I didn't come up with this idea.
                 </label>
 
                 <label for="rememberme" class="rememberme">
-                  <input name="rememberme" type="checkbox" id="rememberme" value="forever" class="margin-right-10" /> I came up with this while working for the U.S. Government.
+                  <input name="rememberme" type="radio" id="rememberme" value="forever" class="margin-right-10" /> I came up with this while working for the U.S. Government.
                 </label>
               </section>
             </div>
@@ -191,6 +196,47 @@
             </div>
           </div>
         </div>
+        <div class="tab-content" id="tab5b">
+          <h3 class="headline centered margin-top-5 margin-bottom-20">What Problem Does Your Patent Solve?</h3>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <section id="provisional-step-5">
+                <label for="">
+                  <%= f.text_area :problem %>
+                </label>
+              </section>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+          <h3 class="headline centered margin-top-5 margin-bottom-20">How Does Your Patent Solve The Problem?</h3>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <section id="provisional-step-5">
+                <label for="">
+                  <%= f.text_area :solution %>
+                </label>
+              </section>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+        </div>
+        <div class="tab-content" id="tab6b">
+          <h3 class="headline centered margin-top-5 margin-bottom-20">Explain How Your Patent Improves On Existing Products Or Processes Or How It Is Innovative In It's Category</h3>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <section id="provisional-step-5">
+                <label for="">
+                  <%= f.text_area :improvement_detail %>
+                </label>
+              </section>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+        </div>
+        <div class="tab-content" id="tab7b"></div>
       </div>
     </div>
   <% end %>
