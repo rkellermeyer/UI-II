@@ -1,0 +1,21 @@
+<%= form_for(@patent_search) do |f| %>
+  <%= f.hidden_field :fields, value: 'patentTitle' %>
+  <% if @patent_search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patent_search.errors.count, "error") %> prohibited this patent_search from being saved:</h2>
+
+      <ul>
+      <% @patent_search.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :terms, placeholder: 'Enter 1 or More Keywords' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

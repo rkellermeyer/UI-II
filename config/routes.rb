@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :patent_searches
   resources :mentors
   resources :project_profiles
   resources :categories

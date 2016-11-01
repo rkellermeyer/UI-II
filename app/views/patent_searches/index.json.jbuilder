@@ -1,0 +1,1 @@
+json.array! @patent_actions, partial: 'patent_searches/patent_actions', as: :patent_actions

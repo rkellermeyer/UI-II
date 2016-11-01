@@ -1,0 +1,26 @@
+<div class="container margin-bottom-20 margin-top-65">
+  <h3>Your Search Resulted In <%= @patent_search.search_results[:count] %> Records That May Match Your Idea</h3>
+  <h4>To see all results, please <%= link_to 'Login', new_member_session_path %> or <%= link_to 'Sign Up', new_member_registration_path %> for one of our many <%= link_to 'membership plans', pages_membership_information_path %>.</h4>
+  <div class="row">
+    <div class="col-md-3"><b>Patent Id</b></div>
+    <div class="col-md-4"><b>Title</b></div>
+    <div class="col-md-3"><b>Filing Date</b></div>
+    <div class="col-md-2"><b>Type</b></div>
+  </div>
+  <hr>
+  <% if @patent_search.present? %>
+    <% @patent_search.search_results[:results].first(10).map do |r|%>
+      <div class="row">
+        <div class="col-md-3"><%= r['id'] %></div>
+        <div class="col-md-4">
+          <% unless JSON.parse(r['publishDocJson'])['applicationPublication']['webURI'] == " " %>
+            <%= link_to r['patentTitle'], JSON.parse(r['publishDocJson'])['applicationPublication']['webURI'], target: '_blank' %>
+          <% end %>
+        </div>
+        <div class="col-md-3"><%= r['appFilingDate'] %></div>
+        <div class="col-md-2"><%= r['appType'] %></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+

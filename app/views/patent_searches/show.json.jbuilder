@@ -1,0 +1,1 @@
+json.partial! "patent_searches/patent_actions", patent_actions: @patent_actions

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Patent Searches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Terms</th>
+      <th>Fields</th>
+      <th>User</th>
+      <th>Results doc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patent_actions.each do |patent_search| %>
+      <tr>
+        <td><%= patent_search.terms %></td>
+        <td><%= patent_search.fields %></td>
+        <td><%= patent_search.user_id %></td>
+        <td><%= patent_search.results_doc_id %></td>
+        <td><%= link_to 'Show', patent_search %></td>
+        <td><%= link_to 'Edit', edit_patentAction_path(patent_search) %></td>
+        <td><%= link_to 'Destroy', patent_search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patent search', new_patentAction_path %>
