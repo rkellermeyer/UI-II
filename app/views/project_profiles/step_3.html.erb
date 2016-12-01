@@ -1,12 +1,40 @@
-<h3 class="headline centered margin-top-5 margin-bottom-20">Explain How Your Patent Improves On Existing Products Or Processes Or How It Is Innovative In It's Category</h3>
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-    <section id="provisional-step-5">
-      <label for="">
-        <%= f.text_area :improvement_detail %>
-      </label>
-    </section>
+<%= form_for(@project_profile) do |f| %>
+  <% if @project_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project_profile.errors.count, "error") %> prohibited this project_profile from being saved:</h2>
+
+      <ul>
+        <% @project_profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h3 class="headline centered margin-top-5 margin-bottom-20">Are There Any Other Parties Involved?</h3>
+  <div class="row">
+    <!-- Patent Form Step 4 -->
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+
+      <section id="provisional-step-1">
+        <label for="inventorship" class="rememberme">
+          <input name="inventorship" type="radio" value="single" class="margin-right-10" /> No, I invented this all by myself.
+        </label>
+
+        <label for="inventorship" class="rememberme">
+          <input name="inventorship" type="radio" value="multiple" class="margin-right-10" /> Yes, I had help.
+        </label>
+
+        <label for="inventorship" class="rememberme">
+          <input name="inventorship" type="radio" value="non-owner" class="margin-right-10" /> I didn't come up with this idea.
+        </label>
+
+        <label for="inventorship" class="rememberme">
+          <input name="inventorship" type="radio" value="government" class="margin-right-10" /> I came up with this while working for the U.S. Government.
+        </label>
+      </section>
+    </div>
+    <div class="col-md-3"></div>
+    <!-- Patent Form Step 4 End -->
   </div>
-  <div class="col-md-3"></div>
-</div>
+<% end %>

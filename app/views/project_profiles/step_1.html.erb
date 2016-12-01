@@ -1,63 +1,28 @@
-<h3 class="headline centered margin-top-5 margin-bottom-20">Why Do You Want To Patent Your Idea?</h3>
-<div class="row">
-  <!-- Patent Form Step 3 -->
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
+<%= form_for(@project_profile) do |f| %>
+  <% if @project_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project_profile.errors.count, "error") %> prohibited this project_profile from being saved:</h2>
 
-    <section id="provisional-step-1">
-      <label for="reason" class="rememberme">
-        <input name="reason" type="radio" value="financial freedom" class="margin-right-10" /> I just want to sell my idea, retire, and sit on a beach sipping my drink.
-      </label>
-
-      <label for="reason" class="rememberme">
-        <input name="reason" type="radio" value="royalties" class="margin-right-10" /> Royalties. I want to get paid every time someone buys or uses my idea.
-      </label>
-
-      <label for="reason" class="rememberme">
-        <input name="reason" type="radio" value="filing for employer" class="margin-right-10" /> My boss is lazy and told me to file this for the company.
-      </label>
-
-      <label for="reason" class="rememberme">
-        <input name="reason" type="radio" value="protection" class="margin-right-10" /> I want to make sure no one else steals my idea.
-      </label>
-
-      <label for="reason" class="rememberme">
-        <input name="reason" type="radio" value="fame" class="margin-right-10" /> I'm a glory hound that wants to brag about how smart I am.
-      </label>
-
-      <label for="reason" class="rememberme">
-        <input name="reason" type="radio" value="other reasons" class="margin-right-10" /> I have my own reasons for wanting to complete a provisional patent.
-      </label>
-    </section>
+      <ul>
+        <% @project_profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h3 class="headline centered margin-top-5 margin-bottom-20">What category does your invention or idea fit into?</h3>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <p>Now, select the best, or closest, category that fits your idea.</p>
+    </div>
+    <div class="col-md-3"></div>
   </div>
-  <div class="col-md-3"></div>
-  <!-- Patent Form Step 3 End -->
-</div>
-
-<h3 class="headline centered margin-top-5 margin-bottom-20">Are There Any Other Parties Involved?</h3>
-<div class="row">
-  <!-- Patent Form Step 4 -->
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-
-    <section id="provisional-step-1">
-      <label for="inventorship" class="rememberme">
-        <input name="inventorship" type="radio" value="single" class="margin-right-10" /> No, I invented this all by myself.
-      </label>
-
-      <label for="inventorship" class="rememberme">
-        <input name="inventorship" type="radio" value="multiple" class="margin-right-10" /> Yes, I had help.
-      </label>
-
-      <label for="inventorship" class="rememberme">
-        <input name="inventorship" type="radio" value="non-owner" class="margin-right-10" /> I didn't come up with this idea.
-      </label>
-
-      <label for="inventorship" class="rememberme">
-        <input name="inventorship" type="radio" value="government" class="margin-right-10" /> I came up with this while working for the U.S. Government.
-      </label>
-    </section>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
+    </div>
+    <div class="col-md-3"></div>
   </div>
-  <div class="col-md-3"></div>
-  <!-- Patent Form Step 4 End -->
-</div>
+<% end %>
