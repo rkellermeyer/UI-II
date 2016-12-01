@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_member!
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
@@ -26,11 +27,12 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-    @project.create_project_profile(project_params[:project_profile_attributes])
+    @project.create_project_profile()
+    @project.project_profile.member_id = current_member.id
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to project_profiles_step_path(@project.project_profile, step: 1), notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -71,6 +73,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:project_type_id, :title, :category_id, project_profile_attributes: [:disclosure_flag, :reasons, :multi_creator])
+      params.require(:project).permit(:project_type_id, :title, :category_id)
     end
 end

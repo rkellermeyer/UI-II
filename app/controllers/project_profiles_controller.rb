@@ -1,4 +1,5 @@
 class ProjectProfilesController < ApplicationController
+  before_action :authenticate_member!
   before_action :set_project_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /project_profiles
@@ -25,6 +26,8 @@ class ProjectProfilesController < ApplicationController
   # POST /project_profiles.json
   def create
     @project_profile = ProjectProfile.new(project_profile_params)
+    @project_profile.idyuh_id = SecureRandom.uuid
+
 
     respond_to do |format|
       if @project_profile.save
@@ -35,6 +38,38 @@ class ProjectProfilesController < ApplicationController
         format.json { render json: @project_profile.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def step_1
+
+  end
+
+  def step_2
+
+  end
+
+  def step_3
+
+  end
+
+  def step_4
+
+  end
+
+  def step_5
+
+  end
+
+  def step_6
+
+  end
+
+  def step_7
+
+  end
+
+  def finalize
+
   end
 
   # PATCH/PUT /project_profiles/1
@@ -69,6 +104,6 @@ class ProjectProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_profile_params
-      params.require(:project_profile).permit(:patentabilities, :disclosure_flag, :number_of_inventors, :multi_creator, :purpose, :improvement_1, :improvement_2, :gaps, :improve_gaps, :profile_steps_doc_id, :component_relationships_doc_id, :project_requirements_doc_id, :working_detail_doc_id, :how_to, :necessities_options, :statement_of_use, :bubba_story_doc_id, :active, :upid, :idyuh_id, :project_id, :member_id)
+      params.require(:project_profile).permit(:patentabilities, :disclosure_flag, :number_of_inventors, :multi_creator, :purpose, :improvement_1, :improvement_2, :gaps, :improve_gaps, :profile_steps_doc_id, :component_relationships_doc_id, :project_requirements_doc_id, :working_detail_doc_id, :how_to, :necessities_options, :statement_of_use, :bubba_story_doc_id, :active, :upid, :idyuh_id, :project_id, :member_id, :step)
     end
 end

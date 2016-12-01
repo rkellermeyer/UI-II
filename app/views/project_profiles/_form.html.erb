@@ -10,96 +10,43 @@
       </ul>
     </div>
   <% end %>
+  <%= f.hidden_field :step, value: params[:step] %>
+  <h3 class="headline centered margin-top-5 margin-bottom-20">Who Knows About Your Idea?</h3>
+  <div class="row">
+    <!-- Patent Form Step 2 -->
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
 
-  <div class="field">
-    <%= f.label :patentabilities %><br>
-    <%= f.number_field :patentabilities %>
-  </div>
-  <div class="field">
-    <%= f.label :disclosures %><br>
-    <%= f.number_field :disclosures %>
-  </div>
-  <div class="field">
-    <%= f.label :number_of_inventors %><br>
-    <%= f.number_field :number_of_inventors %>
-  </div>
-  <div class="field">
-    <%= f.label :multi_creator %><br>
-    <%= f.check_box :multi_creator %>
-  </div>
-  <div class="field">
-    <%= f.label :purpose %><br>
-    <%= f.text_area :purpose %>
-  </div>
-  <div class="field">
-    <%= f.label :improvement_1 %><br>
-    <%= f.text_area :improvement_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :improvement_2 %><br>
-    <%= f.text_area :improvement_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :gaps %><br>
-    <%= f.text_area :gaps %>
-  </div>
-  <div class="field">
-    <%= f.label :improve_gaps %><br>
-    <%= f.text_area :improve_gaps %>
-  </div>
-  <div class="field">
-    <%= f.label :profile_steps_doc_id %><br>
-    <%= f.text_field :profile_steps_doc_id %>
-  </div>
-  <div class="field">
-    <%= f.label :component_relationships_doc_id %><br>
-    <%= f.text_field :component_relationships_doc_id %>
-  </div>
-  <div class="field">
-    <%= f.label :project_requirements_doc_id %><br>
-    <%= f.text_field :project_requirements_doc_id %>
-  </div>
-  <div class="field">
-    <%= f.label :working_detail_doc_id %><br>
-    <%= f.text_field :working_detail_doc_id %>
-  </div>
-  <div class="field">
-    <%= f.label :how_to %><br>
-    <%= f.text_area :how_to %>
-  </div>
-  <div class="field">
-    <%= f.label :necessities_options %><br>
-    <%= f.text_area :necessities_options %>
-  </div>
-  <div class="field">
-    <%= f.label :statement_of_use %><br>
-    <%= f.text_area :statement_of_use %>
-  </div>
-  <div class="field">
-    <%= f.label :bubba_story_doc_id %><br>
-    <%= f.text_field :bubba_story_doc_id %>
-  </div>
-  <div class="field">
-    <%= f.label :active %><br>
-    <%= f.check_box :active %>
-  </div>
-  <div class="field">
-    <%= f.label :upid %><br>
-    <%= f.text_field :upid %>
-  </div>
-  <div class="field">
-    <%= f.label :idyuh_id %><br>
-    <%= f.text_field :idyuh_id %>
-  </div>
-  <div class="field">
-    <%= f.label :project_id %><br>
-    <%= f.number_field :project_id %>
-  </div>
-  <div class="field">
-    <%= f.label :member_id %><br>
-    <%= f.number_field :member_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+      <section id="provisional-step-2">
+        <p class="text-center">Click on the box that best describes how you have kept your secret</p>
+          <%= f.hidden_field :disclosure_flag %>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="jumbo-select good">
+                <h2 class="text-center">I am a STFU! Jedi.</h2>
+                <ul class="list-4">
+                  <li>I have not spoken to anyone publicly about my idea.</li>
+                  <li>I have not written anything publicly about my idea.</li>
+                  <li>I have not advertised my idea in any publications or broadcasts.</li>
+                  <li>I have learned that you really can't trust anyone when it comes to protecting anything.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="jumbo-select bad">
+                <h2 class="text-center">Everyone!</h2>
+                <ul class="list-5">
+                  <li>People that shop for anything have probably seen or purchased something exactly the same or similar.</li>
+                  <li>It's not really my idea, I'm just trying to file it before anyone else does.</li>
+                  <li>Ok, it's not even a new idea.</li>
+                  <li>I'm a dishonest scam artist that steals other's ideas.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </section>
+    </div>
+    <div class="col-md-2"></div>
+    <!-- Patent Form Step 2 End -->
   </div>
 <% end %>
