@@ -46,7 +46,9 @@ gem 'bitmask_attributes'
 # HAML for views
 # gem 'haml-rails'
 
-gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development do
   # Html2Haml
