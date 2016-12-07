@@ -1,0 +1,15 @@
+<%= form_for(project) do |f| %>
+  <%= render_errors(project) if project.errors.any? %>
+  <h3 class="headline centered margin-top-5 margin-bottom-20">What category does your invention or idea fit into?</h3>
+  <div class="row">
+    <!-- Patent Form Step 1 -->
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <p>Now, select the best, or closest, category that fits your idea.</p>
+      <section id="provisional-step-1">
+        <%= f.select :category_id, category_options %>
+        <%= f.submit %>
+      </section>
+    </div>
+  </div>
+<% end %>

@@ -1,46 +1,42 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_member!
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :update_step!, only: :new_step
+  helper_method :render_step, :project, :step_partial
 
   def index
-    @projects = Project.all
   end
 
   def show
   end
 
   def new
-    @project = Project.new
-    @project.build_project_profile
   end
 
   def edit
+    render :edit
   end
 
   def create
-    @project = Project.new(project_params)
-    @project.create_project_profile()
-    @project.project_profile.member_id = current_member.id
-
     respond_to do |format|
-      if @project.save
-        format.html { redirect_to project_profiles_step_path(@project.project_profile, step: 1), notice: 'Project was successfully created.' }
-        format.json { render :show, status: :created, location: @project }
+      if project.save
+        format.html { redirect_to project_new_step_path(project, project.step),
+                      notice: 'Project was successfully created.' }
+        format.json { render :show, status: :created, location: project }
       else
         format.html { render :new }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.json { render json: project.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-        format.json { render :show, status: :ok, location: @project }
+      if project.update(project_params)
+        format.html { redirect_to project_new_step_path(project, next_step), notice: 'Project was successfully updated.' }
+        format.json { render :show, status: :ok, location: project }
       else
         format.html { render :edit }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.json { render json: project.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,14 +49,48 @@ class ProjectsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
+  def new_step
+    render :edit
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_params
-      params.require(:project).permit(:project_type_id, :title, :category_id)
-    end
+  private
+
+  def project
+    @project ||= if (params[:project_id] || params[:id]).present?
+                   Project.find(params[:project_id] || params[:id])
+                 else
+                   Project.new(new_params)
+                 end
+  end
+  # delegate :project_profile, to: :project
+
+  def projects
+    @projects ||= Project.all
+  end
+
+  def new_params
+    params.merge(project_profile_attributes: { member_id: current_member.id }).permit(
+      *Project::WHITELISTED_ATTRS,
+      project_profile_attributes: [:member_id]
+    )
+  end
+
+  def project_params
+    params.require(:project).permit(
+      *Project::WHITELISTED_ATTRS,
+      project_profile_attributes: ProjectProfile::WHITELISTED_ATTRS + ProjectProfile::NESTED_ATTRS
+    )
+  end
+
+  def step_partial
+    "projects/steps/step_#{params[:step]}"
+  end
+
+  def next_step
+    project.step.next
+  end
+
+  def update_step!
+    project.profile.update(step: params[:step])
+  end
 end

@@ -1,0 +1,19 @@
+<%= form_for(project) do |f| %>
+  <%= render_errors(project) if project.errors.any? %>
+  <h3 class="headline centered margin-top-5 margin-bottom-20">Why Do You Want To Patent Your Idea?</h3>
+  <div class="row">
+    <!-- Patent Form Step 3 -->
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+
+      <section id="provisional-step-1">
+        <%= f.fields_for :project_profile do |ff| %>
+          <%= ff.collection_check_boxes(:reasons, reasons, :value, :label) %>
+        <% end %>
+      <%= f.submit %>
+    </section>
+    </div>
+    <div class="col-md-3"></div>
+  <!-- Patent Form Step 2 End -->
+  </div>
+<% end %>

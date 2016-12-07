@@ -1,0 +1,33 @@
+inventorships:
+  -
+    value: 1
+    label: No, I invented this all by myself.
+  -
+    value: 2
+    label: Yes, I had help.
+  -
+    value: 3
+    label: I didn't come up with this idea.
+  -
+    value: 4
+    label: I came up with this while working for the U.S. Government.
+
+reasons:
+  -
+    value: sell
+    label: I just want to sell my idea, retire, and sit on a beach sipping my drink.
+  -
+    value: license
+    label: Royalties. I want to get paid every time someone buys or uses my idea.
+  -
+    value: proxy
+    label: My boss is lazy and told me to file this for the company.
+  -
+    value: security
+    label: I want to make sure no one else steals my idea.
+  -
+    value: professional
+    label: I'm a glory hound that wants to brag about how smart I am.
+  -
+    value: other
+    label: I have my own reasons for wanting to complete a provisional patent.
