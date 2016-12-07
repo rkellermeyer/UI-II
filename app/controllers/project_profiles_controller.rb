@@ -31,38 +31,6 @@ class ProjectProfilesController < ApplicationController
     end
   end
 
-  def step_1
-
-  end
-
-  def step_2
-
-  end
-
-  def step_3
-
-  end
-
-  def step_4
-
-  end
-
-  def step_5
-
-  end
-
-  def step_6
-
-  end
-
-  def step_7
-
-  end
-
-  def finalize
-
-  end
-
   # PATCH/PUT /project_profiles/1
   # PATCH/PUT /project_profiles/1.json
   def update
