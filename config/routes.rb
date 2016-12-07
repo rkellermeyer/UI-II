@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :project_profiles
   resources :categories
   resources :contact_requests
-  resources :projects
+  resources :projects do
+    get '/new/step/(:step)', to: 'projects#new_step', as: :new_step
+  end
   get 'pages/home'
   get 'pages/membership_information'
   get 'pages/about_us'

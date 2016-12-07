@@ -1,6 +1,6 @@
 class ProjectProfilesController < ApplicationController
   before_action :authenticate_member!
-  before_action :set_project_profile, only: [:show, :edit, :update, :destroy]
+  helper_method :project_profile
 
   def index
     @project_profiles = ProjectProfile.all
@@ -9,15 +9,10 @@ class ProjectProfilesController < ApplicationController
   def show
   end
 
-  def new
-    @project_profile = ProjectProfile.new
-  end
-
   def edit
   end
 
   def create
-    @project_profile = ProjectProfile.new(project_profile_params)
     @project_profile.idyuh_id = SecureRandom.uuid
 
     respond_to do |format|
@@ -56,11 +51,16 @@ class ProjectProfilesController < ApplicationController
   end
 
   private
-    def set_project_profile
-      @project_profile = ProjectProfile.find(params[:id])
-    end
 
-    def project_profile_params
-      params.require(:project_profile).permit(:patentabilities, :disclosure_flag, :number_of_inventors, :multi_creator, :purpose, :improvement_1, :improvement_2, :gaps, :improve_gaps, :profile_steps_doc_id, :component_relationships_doc_id, :project_requirements_doc_id, :working_detail_doc_id, :how_to, :necessities_options, :statement_of_use, :bubba_story_doc_id, :active, :upid, :idyuh_id, :project_id, :member_id, :step)
-    end
+  def project_profile
+    @project_profile ||= if params[:id].present?
+                           ProjectProfile.find(params[:id])
+                         else
+                           ProjectProfile.new(project_profile_params)
+                         end
+  end
+
+  def project_profile_params
+    params.require(:project_profile).permit(*ProjectProfile::WHITELISTED_ATTRS)
+  end
 end
