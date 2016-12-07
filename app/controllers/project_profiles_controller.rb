@@ -2,32 +2,23 @@ class ProjectProfilesController < ApplicationController
   before_action :authenticate_member!
   before_action :set_project_profile, only: [:show, :edit, :update, :destroy]
 
-  # GET /project_profiles
-  # GET /project_profiles.json
   def index
     @project_profiles = ProjectProfile.all
   end
 
-  # GET /project_profiles/1
-  # GET /project_profiles/1.json
   def show
   end
 
-  # GET /project_profiles/new
   def new
     @project_profile = ProjectProfile.new
   end
 
-  # GET /project_profiles/1/edit
   def edit
   end
 
-  # POST /project_profiles
-  # POST /project_profiles.json
   def create
     @project_profile = ProjectProfile.new(project_profile_params)
     @project_profile.idyuh_id = SecureRandom.uuid
-
 
     respond_to do |format|
       if @project_profile.save
@@ -97,12 +88,10 @@ class ProjectProfilesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_project_profile
       @project_profile = ProjectProfile.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def project_profile_params
       params.require(:project_profile).permit(:patentabilities, :disclosure_flag, :number_of_inventors, :multi_creator, :purpose, :improvement_1, :improvement_2, :gaps, :improve_gaps, :profile_steps_doc_id, :component_relationships_doc_id, :project_requirements_doc_id, :working_detail_doc_id, :how_to, :necessities_options, :statement_of_use, :bubba_story_doc_id, :active, :upid, :idyuh_id, :project_id, :member_id, :step)
     end
