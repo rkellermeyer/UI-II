@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
 
   def create
     respond_to do |format|
-      if project.save
+      if project.update(project_params)
         format.html { redirect_to project_new_step_path(project, project.step),
                       notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: project }

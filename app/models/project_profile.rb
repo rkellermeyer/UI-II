@@ -8,10 +8,6 @@ class ProjectProfile < ActiveRecord::Base
   WHITELISTED_ATTRS = %i(id number_of_inventors).freeze
   NESTED_ATTRS = [{ reasons: [] }].freeze
 
-  def number_of_inventors=(*inventors)
-    inventors.flatten.select { |i| i.present? }.size
-  end
-
   private
 
   def set_step!
@@ -20,5 +16,6 @@ class ProjectProfile < ActiveRecord::Base
 
   def update_inventorship!
     self.multi_creator = number_of_inventors.to_i > 1
+    return
   end
 end
