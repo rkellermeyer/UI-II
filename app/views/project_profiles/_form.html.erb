@@ -1,10 +1,10 @@
-<%= form_for(@project_profile) do |f| %>
-  <% if @project_profile.errors.any? %>
+<%= form_for(project_profile) do |f| %>
+  <% if project_profile.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@project_profile.errors.count, "error") %> prohibited this project_profile from being saved:</h2>
+      <h2><%= pluralize(project_profile.errors.count, "error") %> prohibited this project_profile from being saved:</h2>
 
       <ul>
-      <% @project_profile.errors.full_messages.each do |message| %>
+      <% project_profile.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
