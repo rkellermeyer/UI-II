@@ -1,13 +1,13 @@
 <%= form_for(project) do |f| %>
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project_profile from being saved:</h2>
-
-      <ul>
-        <% project.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <%= render_errors(project) if project.errors.any? %>
+  <h3 class="headline centered margin-top-5 margin-bottom-20"></h3>
+  <div class="row">
+    <!-- Patent Form Step 8 -->
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <section id="provisional-step-1">
+        <%= f.submit %>
+      </section>
     </div>
-  <% end %>
+  </div>
 <% end %>
