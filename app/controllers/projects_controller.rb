@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    project.member_id = current_member.id
     respond_to do |format|
       if project.update(project_params)
         format.html { redirect_to project_new_step_path(project, project.step),
