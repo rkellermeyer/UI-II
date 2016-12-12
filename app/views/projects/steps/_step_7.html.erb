@@ -1,14 +1,19 @@
 <%= form_for(project) do |f| %>
-  <%= render_errors(project) if project.errors.any? %>
-  <h3 class="headline centered margin-top-5 margin-bottom-20"></h3>
-  <div class="row">
-    <!-- Patent Form Step 7 -->
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <section id="provisional-step-1">
+    <%= render_errors(project) if   project.errors.any? %>
+    <div class="row">
+      <h3 class="headline centered margin-top-5 margin-bottom-20">Explain How Your Patent Improves On Existing Products Or Processes Or How It Is Innovative In It's Category</h3>
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <%= f.fields_for :project_profile do |ff|  %>
+        <section id="provisional-step-5">
+          <label for="">
+            <%= ff.text_area :dependencies %>
+          </label>
+        </section>
+        <% end %>
         <%= f.submit %>
-      </section>
+      </div>
+      <div class="col-md-3"></div>
     </div>
-  </div>
 <% end %>
 
