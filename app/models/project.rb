@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  belongs_to :member
   has_one :project_profile
   accepts_nested_attributes_for :project_profile
   delegate :step, to: :profile
