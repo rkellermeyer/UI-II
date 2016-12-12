@@ -15,7 +15,18 @@
 
 </div>
 <div class="clearfix"></div>
-<h1>Editing Project</h1>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <h5 class="text-center margin-bottom-10 margin-top-10"><i class="sl sl-icon-bulb"></i> Progress</h5>
+    <!-- Skill -->
+    <div class="skill-bar">
+      <div class="skill-bar-value" data-percentage='<%= (project.step.to_i * 6.55) %>%'></div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="col-md-3"></div>
+</div>
 
 <%= render partial: step_partial %>
 
