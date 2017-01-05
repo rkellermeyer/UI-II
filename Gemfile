@@ -34,8 +34,8 @@ gem 'cancan'
 # Paperclip for image and file uploads
 gem 'paperclip'
 
-# Prawn for PDF-ing docs
-gem 'prawn'
+# Wicked PDF for PDF-ing docs
+gem 'wicked_pdf'
 
 # Glyphicons
 gem 'bootstrap-glyphicons'
