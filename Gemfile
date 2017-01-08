@@ -36,6 +36,7 @@ gem 'paperclip'
 
 # Wicked PDF for PDF-ing docs
 gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 # Glyphicons
 gem 'bootstrap-glyphicons'
