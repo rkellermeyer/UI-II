@@ -1,0 +1,90 @@
+@import 'bootstrap';
+
+body { color: black }
+
+.page-header {
+  font-size: 0.5em;
+  text-align: right;
+  line-height: 10px;
+  .row { margin-top: 2px; }
+}
+
+.coversheet-title {
+  text-align: center;
+  .subtitle { font-size: 0.7em }
+}
+
+.express-mail-label {
+  font-size: 0.7em
+}
+
+.page-1-form {
+  border: 1px solid black;
+  .title, .small-title {
+    text-align: center;
+    border: 1px solid black;
+  }
+  .small-title { font-size: 0.65em }
+  .form-cell {
+    border: 1px solid black;
+    font-size: 0.7em;
+  }
+  .column-header {
+    text-align: center;
+  }
+  .title-area {
+    min-height: 70px;
+    border: 1px solid black;
+  }
+  .correspondence {
+    font-size: 0.8em;
+    border: 1px solid black;
+  }
+  .address-name, .address-street {
+    border: 1px solid black;
+  }
+  .address-street { min-height: 40px }
+  .customer-number, .unchecked {
+    border: 1px solid black;
+  }
+  .unchecked {
+    height: 10px;
+    width: 10px;
+    margin: 8px 10px 0;
+    float: left;
+  }
+  .customer-number {
+    height: 40px;
+    width: 270px;
+    margin: 8px 0;
+    float: right;
+  }
+  .enclosed {
+    border: 1px solid black;
+    font-size: 0.6em;
+    .fees-disclaimer { line-height: 10px }
+  }
+  .payment-method {
+    font-size: 0.8em;
+    .amount-field {
+      border: 1px solid black;
+      height: 25px;
+      width: 50px;
+    }
+  }
+}
+
+.page-footer {
+  .title {
+    text-align: center;
+    font-size: 0.8em;
+  }
+  .footer-disclaimer, .footer-advisor {
+    font-size: 0.6em;
+    line-height: 10px;
+  }
+  .footer-advisor {
+    text-align: center;
+    font-style: italic;
+  }
+}
