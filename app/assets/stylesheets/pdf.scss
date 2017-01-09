@@ -28,6 +28,7 @@ body { color: black }
   .form-cell {
     border: 1px solid black;
     font-size: 0.7em;
+    height: 25px;
   }
   .column-header {
     text-align: center;
@@ -59,17 +60,28 @@ body { color: black }
     margin: 8px 0;
     float: right;
   }
-  .enclosed {
+  .payment-method { padding-bottom: 12px; }
+  .enclosed, .payment-method {
     border: 1px solid black;
     font-size: 0.6em;
-    .fees-disclaimer { line-height: 10px }
-  }
-  .payment-method {
-    font-size: 0.8em;
+    .checklist-item, .checklist-subitem {
+      height: 12px;
+    }
+    .checklist-subitem {
+      margin-left: 30px;
+      font-size: 0.9em;
+    }
+    .fees-disclaimer {
+      line-height: 10px;
+      margin-top: 10px;
+    }
     .amount-field {
       border: 1px solid black;
       height: 25px;
-      width: 50px;
+      width: 100px;
+    }
+    .total-fee {
+      padding-top: 20px
     }
   }
 }
