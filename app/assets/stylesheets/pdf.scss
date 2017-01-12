@@ -129,3 +129,16 @@ body { color: black }
     margin-top: -10px
   }
 }
+
+.page-3 {
+  padding-top: 35px;
+  .privacy-statement {
+    margin: 15px 0;
+    line-height: 18px;
+  }
+  .info-description: { margin-bottom: 15px; }
+  ol {
+    font-size: 0.8em;
+    line-height: 12px;
+  }
+}
