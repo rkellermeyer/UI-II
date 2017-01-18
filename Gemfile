@@ -80,5 +80,6 @@ group :development, :test do
   gem 'spring'
 
   gem 'pry-rails'
+  gem 'mailcatcher' # for testing email generation in development
 end
 
