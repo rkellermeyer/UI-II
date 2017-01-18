@@ -1,7 +1,8 @@
 <%= form_for(project) do |f| %>
     <%= render_errors(project) if   project.errors.any? %>
     <div class="row">
-      <h3 class="headline centered margin-top-5 margin-bottom-20">Create Your Bubba Story</h3>
+      <h3 class="headline centered margin-top-5 margin-bottom-20">Provide A Description Of How A Consumer Will Use Your Product, Or Upload Your Bubba Story</h3>
+      <h6 class="headline centered margin-top-5 margin-bottom-20">A Bubba Story is a narrative that describes the product, how consumers use the product, and details any processes utilized by your product.</h6>
       <div class="col-md-3"></div>
       <div class="col-md-6">
         <%= f.fields_for :project_profile do |ff|  %>
