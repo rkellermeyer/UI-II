@@ -1,0 +1,144 @@
+@import 'bootstrap';
+
+body { color: black }
+
+.page-header {
+  font-size: 0.5em;
+  text-align: right;
+  line-height: 10px;
+  .row { margin-top: 2px; }
+}
+
+.coversheet-title {
+  text-align: center;
+  .subtitle { font-size: 0.7em }
+}
+
+.express-mail-label {
+  font-size: 0.7em
+}
+
+.page-1-form {
+  border: 1px solid black;
+  .title, .small-title {
+    text-align: center;
+    border: 1px solid black;
+  }
+  .small-title { font-size: 0.65em }
+  .form-cell {
+    border: 1px solid black;
+    font-size: 0.7em;
+    height: 25px;
+  }
+  .column-header {
+    text-align: center;
+  }
+  .title-area {
+    min-height: 70px;
+    border: 1px solid black;
+  }
+  .correspondence {
+    font-size: 0.8em;
+    border: 1px solid black;
+  }
+  .address-name, .address-street {
+    border: 1px solid black;
+  }
+  .address-street { min-height: 40px }
+  .customer-number {
+    border: 1px solid black;
+    height: 40px;
+    width: 270px;
+    margin: 8px 0;
+    float: right;
+  }
+  .payment-method { padding-bottom: 12px; }
+  .enclosed, .payment-method {
+    border: 1px solid black;
+    font-size: 0.6em;
+    .checklist-item, .checklist-subitem {
+      height: 12px;
+    }
+    .checklist-subitem {
+      margin-left: 30px;
+      font-size: 0.9em;
+    }
+    .fees-disclaimer {
+      line-height: 10px;
+      margin-top: 10px;
+    }
+    .amount-field {
+      border: 1px solid black;
+      height: 25px;
+      width: 100px;
+    }
+    .total-fee {
+      padding-top: 20px
+    }
+  }
+  .contract-question {
+    font-size: 0.6em;
+  }
+}
+
+.unchecked {
+  border: 1px solid black;
+  height: 10px;
+  width: 10px;
+  margin: 8px 10px 0;
+  float: left;
+}
+
+.page-footer {
+  .title {
+    text-align: center;
+    font-size: 0.8em;
+  }
+  .footer-disclaimer, .footer-advisor {
+    font-size: 0.6em;
+    line-height: 10px;
+  }
+  .footer-advisor {
+    text-align: center;
+    font-style: italic;
+  }
+}
+
+.page-break {
+  display: block;
+  clear: both;
+  page-break-after: always;
+}
+
+.page-2-form {
+  border: 2px solid black;
+  font-size: 0.6em;
+  padding: 2%;
+  margin-bottom: 10px;
+}
+
+.warning {
+  font-size: 0.8em;
+  line-height: 12px;
+}
+
+.signature-area {
+  margin-top: 20px;
+  font-size: 0.7em;
+  .sub-label {
+    margin-top: -10px
+  }
+}
+
+.page-3 {
+  padding-top: 35px;
+  .privacy-statement {
+    margin: 15px 0;
+    line-height: 18px;
+  }
+  .info-description: { margin-bottom: 15px; }
+  ol {
+    font-size: 0.8em;
+    line-height: 12px;
+  }
+}
