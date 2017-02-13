@@ -6,7 +6,14 @@ class ProjectProfile < ActiveRecord::Base
   before_save :update_inventorship!
   before_save :assign_idyuh_id!
 
-  WHITELISTED_ATTRS = %i(id number_of_inventors components dependencies how_to statement_of_use other_uses).freeze
+  has_attached_file :draft_a
+  has_attached_file :draft_b
+  has_attached_file :draft_c
+
+  has_attached_file :bubba_story
+
+
+  WHITELISTED_ATTRS = %i(id number_of_inventors components dependencies how_to statement_of_use other_uses draft_a draft_b draft_c bubba_story).freeze
   NESTED_ATTRS = [{ reasons: [] }].freeze
 
   private

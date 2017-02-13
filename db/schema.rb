@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223221026) do
+ActiveRecord::Schema.define(version: 20170109163954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,7 +127,28 @@ ActiveRecord::Schema.define(version: 20161223221026) do
     t.string   "domain"
     t.integer  "search_results_ref_id"
     t.text     "solution_detail"
-    t.string   "uniqueness"
+    t.text     "uniqueness"
+    t.text     "components"
+    t.text     "dependencies"
+    t.text     "purpose_application"
+    t.text     "bubba_story"
+    t.text     "other_uses"
+    t.string   "draft_a_file_name"
+    t.string   "draft_a_content_type"
+    t.integer  "draft_a_file_size"
+    t.datetime "draft_a_updated_at"
+    t.string   "draft_b_file_name"
+    t.string   "draft_b_content_type"
+    t.integer  "draft_b_file_size"
+    t.datetime "draft_b_updated_at"
+    t.string   "draft_c_file_name"
+    t.string   "draft_c_content_type"
+    t.integer  "draft_c_file_size"
+    t.datetime "draft_c_updated_at"
+    t.string   "bubba_story_file_name"
+    t.string   "bubba_story_content_type"
+    t.integer  "bubba_story_file_size"
+    t.datetime "bubba_story_updated_at"
   end
 
   add_index "project_profiles", ["bubba_story_doc_id"], name: "index_project_profiles_on_bubba_story_doc_id", using: :btree

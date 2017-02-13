@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# integrate paypal express
+gem 'paypal-express'
+
 # Devise for authentication
 gem 'devise'
 
